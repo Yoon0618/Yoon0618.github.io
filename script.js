@@ -1,6 +1,6 @@
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID';
-const API_KEY = 'YOUR_API_KEY';
-const RANGE = 'Sheet1!A2:G'; // Adjust the range based on your data
+const SPREADSHEET_ID = '1gAwSvwTnFfcXNoTzaktcgW_icCB_T2tWqOoy25q4Wug';
+const API_KEY = '6921110ddb437dbe328990a4383da9c7e79c198e';
+const RANGE = 'Sheet1!A1:R100'; // Adjust the range based on your data
 
 async function fetchSheetData() {
     const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`);
