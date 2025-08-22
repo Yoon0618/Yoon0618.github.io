@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoonhyeong Lee - Physics & AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* 스크롤을 부드럽게 합니다 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 네비게이션 바 -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-2xl font-bold text-gray-900">Yoonhyeong Lee</span>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
+                    <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-300">Skills</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- 모바일 메뉴 -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block text-gray-600 hover:text-indigo-600 transition duration-300">About</a>
+            <a href="#projects" class="block text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
+            <a href="#skills" class="block text-gray-600 hover:text-indigo-600 transition duration-300">Skills</a>
+            <a href="#contact" class="block text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="max-w-5xl mx-auto p-4 md:p-8">
+
+        <!-- About 섹션 -->
+        <section id="about" class="min-h-screen flex items-center justify-center text-center">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+                    Yoonhyeong Lee
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600">
+                    물리학을 탐구하며 인공지능으로 세상을 이해하는 학생입니다.
+                </p>
+                <p class="max-w-2xl mx-auto text-gray-500">
+                    우주의 근본 원리를 파헤치는 물리학에 매료되었고, 복잡한 데이터 속에서 의미 있는 패턴을 찾아내는 인공지능의 잠재력을 보았습니다. 저는 이 두 분야의 접점에서 새로운 가치를 창출하는 것을 목표로 합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects 섹션 -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 프로젝트 카드 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프로젝트 제목 1</h3>
+                        <p class="text-gray-600 mb-4">물리학 시뮬레이션 데이터 분석을 위한 딥러닝 모델 개발. 이 프로젝트에 대한 간략한 설명입니다.</p>
+                        <a href="#" class="text-indigo-600 hover:underline">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 프로젝트 카드 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/CBD5E0/4A5568?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프로젝트 제목 2</h3>
+                        <p class="text-gray-600 mb-4">양자 컴퓨팅 알고리즘을 시각화하는 웹 애플리케이션. 이 프로젝트에 대한 간략한 설명입니다.</p>
+                        <a href="#" class="text-indigo-600 hover:underline">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 프로젝트 카드 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/BEE3F8/2D3748?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프로젝트 제목 3</h3>
+                        <p class="text-gray-600 mb-4">천체 이미지 분류를 위한 CNN 모델 연구. 이 프로젝트에 대한 간략한 설명입니다.</p>
+                        <a href="#" class="text-indigo-600 hover:underline">자세히 보기 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills 섹션 -->
+        <section id="skills" class="py-20 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-8 px-4">
+                <!-- Physics 스킬 -->
+                <div class="w-full md:w-1/3 p-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-indigo-700">Physics</h3>
+                    <ul class="space-y-2 text-center">
+                        <li class="bg-indigo-100 text-indigo-800 rounded-full px-4 py-1">양자역학 (Quantum Mechanics)</li>
+                        <li class="bg-indigo-100 text-indigo-800 rounded-full px-4 py-1">전자기학 (Electromagnetism)</li>
+                        <li class="bg-indigo-100 text-indigo-800 rounded-full px-4 py-1">통계물리 (Statistical Physics)</li>
+                        <li class="bg-indigo-100 text-indigo-800 rounded-full px-4 py-1">고전역학 (Classical Mechanics)</li>
+                    </ul>
+                </div>
+                <!-- AI & Programming 스킬 -->
+                <div class="w-full md:w-1/3 p-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-purple-700">AI & Programming</h3>
+                    <ul class="space-y-2 text-center">
+                        <li class="bg-purple-100 text-purple-800 rounded-full px-4 py-1">Python (PyTorch, TensorFlow)</li>
+                        <li class="bg-purple-100 text-purple-800 rounded-full px-4 py-1">Machine Learning</li>
+                        <li class="bg-purple-100 text-purple-800 rounded-full px-4 py-1">Deep Learning (CNN, RNN)</li>
+                        <li class="bg-purple-100 text-purple-800 rounded-full px-4 py-1">Data Analysis & Visualization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact 섹션 -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+            <p class="text-gray-600 mb-8">
+                새로운 기회와 협업에 대해 언제나 열려있습니다. 편하게 연락주세요.
+            </p>
+            <a href="mailto:yoonhyeong.lee@example.com" 
+               class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition-colors duration-300 text-lg">
+                Email Me
+            </a>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-white border-t">
+        <div class="max-w-5xl mx-auto py-6 px-4 text-center text-gray-500">
+            &copy; 2024 Yoonhyeong Lee. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // 모바일 메뉴 토글 스크립트
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
