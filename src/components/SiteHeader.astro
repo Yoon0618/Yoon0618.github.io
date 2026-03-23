@@ -1,0 +1,37 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/posts", label: "Posts" },
+  { href: "/about", label: "About" }
+];
+---
+
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand-mark" href="/">
+      <span class="brand-eyebrow">Plasma Physics</span>
+      <strong>Notebook</strong>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "nav-link",
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href))
+                ? "is-active"
+                : undefined
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getPublishedPosts, getSeries } from "../../utils/content";
+
+export async function getStaticPaths() {
+  const posts = getPublishedPosts(await getCollection("posts"));
+  const series = getSeries(posts);
+
+  return series.map((entry) => ({
+    params: { series: entry.slug },
+    props: {
+      seriesLabel: entry.label
+    }
+  }));
+}
+
+const { seriesLabel } = Astro.props;
+const seriesGroup = getSeries(getPublishedPosts(await getCollection("posts"))).find(
+  (entry) => entry.label === seriesLabel
+);
+
+if (!seriesGroup) {
+  throw new Error(`Series not found: ${seriesLabel}`);
+}
+---
+
+<BaseLayout
+  title={`${seriesGroup.label} | Series`}
+  description={`${seriesGroup.label} 시리즈 글 목록.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-eyebrow">Series</p>
+      <h1>{seriesGroup.label}</h1>
+      <p class="page-intro">
+        같은 주제를 여러 단계로 이어 읽을 수 있도록 묶은 시리즈입니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section-spacing">
+    <div class="series-page-list">
+      {
+        seriesGroup.posts.map((post, index) => (
+          <div class="series-page-row">
+            <span class="series-step">{String(index + 1).padStart(2, "0")}</span>
+            <PostCard post={post} compact={true} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

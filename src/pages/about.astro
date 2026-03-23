@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About | Plasma Physics Notebook"
+  description="이 블로그의 공부 방식과 기록 원칙."
+>
+  <section class="page-hero">
+    <div class="container about-grid">
+      <div>
+        <p class="page-eyebrow">About</p>
+        <h1>공부한 내용을 잊지 않기 위한 개인 연구 노트.</h1>
+      </div>
+      <div class="about-copy">
+        <p>
+          이 공간은 플라즈마 물리를 공부하면서 만난 개념, 헷갈린 지점, 계산의
+          감각을 오래 남겨두기 위한 블로그입니다.
+        </p>
+        <p>
+          짧은 노트는 질문을 빠르게 붙잡기 위해 쓰고, 긴 정리글은 그 질문을
+          다시 설명 가능한 언어로 바꾸기 위해 씁니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-spacing">
+    <div class="about-columns">
+      <div>
+        <p class="section-kicker">Workflow</p>
+        <h2>기록 방식</h2>
+        <ul class="about-list">
+          <li>먼저 짧은 note로 개념과 의문을 남깁니다.</li>
+          <li>이후 연결이 생기면 article로 다시 정리합니다.</li>
+          <li>시리즈는 같은 주제를 단계적으로 읽기 위한 묶음입니다.</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="section-kicker">Utility</p>
+        <h2>보조 작업 공간</h2>
+        <p>
+          수식 문서 작업이 필요할 때는 별도의 Overleaf 인스턴스를 사용하고,
+          여기서는 학습 기록과 설명을 중심으로 남깁니다.
+        </p>
+        <a class="button-secondary" href="/overleaf/">Overleaf 열기</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

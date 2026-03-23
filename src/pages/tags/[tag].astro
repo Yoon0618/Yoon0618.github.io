@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getPublishedPosts, getTags } from "../../utils/content";
+
+export async function getStaticPaths() {
+  const posts = getPublishedPosts(await getCollection("posts"));
+  const tags = getTags(posts);
+
+  return tags.map((tag) => ({
+    params: { tag: tag.slug },
+    props: {
+      tagLabel: tag.label
+    }
+  }));
+}
+
+const { tagLabel } = Astro.props;
+const posts = getPublishedPosts(await getCollection("posts")).filter((post) =>
+  post.data.tags.includes(tagLabel)
+);
+---
+
+<BaseLayout
+  title={`${tagLabel} | Tags`}
+  description={`${tagLabel} 태그 글 목록.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-eyebrow">Tag</p>
+      <h1>#{tagLabel}</h1>
+      <p class="page-intro">{posts.length}개의 글이 이 태그와 연결되어 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="container section-spacing">
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+title: "First look at a Langmuir probe trace"
+description: "A short English note on reading the electron-rich region of a probe I-V curve."
+pubDate: 2026-03-24
+updatedDate: 2026-03-24
+type: note
+category: "진단"
+tags:
+  - Langmuir probe
+  - diagnostics
+  - electron temperature
+lang: en
+series: "플라즈마 진단 입문"
+seriesOrder: 1
+draft: false
+---
+
+When I first read a Langmuir probe trace, the most useful mental picture was simple: the curve is a compressed map of which particles can reach the probe at a given bias.
+
+In the electron-retarding region, a common first approximation is
+
+$$
+I_e(V) \propto \exp\left(\frac{e(V - V_p)}{k_B T_e}\right).
+$$
+
+That means the semi-log slope gives a direct handle on the electron temperature.
+
+```python
+import numpy as np
+
+def estimate_te(voltage, current):
+    coeffs = np.polyfit(voltage, np.log(current), 1)
+    return 1 / coeffs[0]
+```
+
+<figure>
+  <img
+    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+    alt="Lab notebook and monitor used as a visual placeholder for diagnostics notes"
+  />
+  <figcaption>
+    Placeholder figure for the diagnostics series. Real probe traces can replace this later.
+  </figcaption>
+</figure>
+
+The practical caution is just as important as the formula: once ion current subtraction or sheath assumptions become shaky, the straight-line interpretation gets fragile.

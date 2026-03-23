@@ -1,0 +1,51 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+import { slugifyTerm } from "../utils/content";
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  typeLabel: string;
+  dateLabel: string;
+  updatedLabel?: string;
+  tags: string[];
+}
+
+const { title, description, category, typeLabel, dateLabel, updatedLabel, tags } =
+  Astro.props;
+---
+
+<BaseLayout title={`${title} | Plasma Physics Notebook`} description={description}>
+  <section class="post-hero">
+    <div class="container">
+      <p class="page-eyebrow">Study Log</p>
+      <h1>{title}</h1>
+      <p class="page-intro">{description}</p>
+
+      <div class="post-hero-meta">
+        <span>{typeLabel}</span>
+        <span>{category}</span>
+        <span>{dateLabel}</span>
+        {updatedLabel && <span>Updated {updatedLabel}</span>}
+      </div>
+
+      <div class="post-tag-row">
+        {
+          tags.map((tag) => (
+            <a class="post-tag" href={`/tags/${slugifyTerm(tag)}/`}>
+              #{tag}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container article-shell">
+    <article class="prose-shell">
+      <slot />
+    </article>
+  </section>
+</BaseLayout>
