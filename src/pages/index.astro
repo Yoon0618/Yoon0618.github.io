@@ -22,30 +22,37 @@ const tags = getTags(posts).slice(0, 10);
   description="플라즈마 물리를 공부하며 정리한 노트와 긴 정리글을 모아두는 아카이브."
 >
   <section class="hero-section">
-    <div class="hero-backdrop"></div>
-    <div class="container hero-grid">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-inner">
       <div class="hero-copy">
-        <p class="page-eyebrow">Plasma Physics Study Archive</p>
-        <h1>개념이 연결되는 순간을 붙잡아두는 플라즈마 물리 노트북.</h1>
+        <p class="page-eyebrow">Plasma Physics Notebook</p>
+        <h1>플라즈마 물리 공부를 천천히 쌓아두는 개인 노트.</h1>
         <p class="page-intro">
-          짧은 학습 메모와 긴 정리글을 한 곳에 쌓아두며, Debye shielding부터
-          진단과 수송까지 공부 흐름을 천천히 기록합니다.
+          짧은 메모와 긴 정리글을 같은 흐름 안에 두고, 헷갈렸던 개념과 다시 보고
+          싶은 계산을 조용히 축적합니다.
         </p>
 
         <div class="hero-actions">
-          <a class="button-primary" href="/posts">최근 기록 읽기</a>
-          <a class="button-secondary" href="/about">공부 방식 보기</a>
+          <a class="button-primary" href="/posts">기록 보기</a>
+          <a class="button-secondary" href="/about">노트 방식</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-panel">
-        <p class="hero-panel-kicker">Focus Now</p>
-        <ul class="hero-notes">
-          <li>Debye length와 quasi-neutrality의 연결</li>
-          <li>Langmuir probe 해석에서의 전류-전압 곡선 읽기</li>
-          <li>짧은 노트와 긴 정리글을 같은 아카이브에서 운영</li>
-        </ul>
-      </div>
+  <section class="container hero-strip">
+    <div class="hero-strip-item">
+      <span class="strip-label">Now reading</span>
+      <p>Debye length와 quasi-neutrality의 연결</p>
+    </div>
+    <div class="hero-strip-item">
+      <span class="strip-label">Next note</span>
+      <p>Langmuir probe I-V 곡선의 전자 영역 읽기</p>
+    </div>
+    <div class="hero-strip-item">
+      <span class="strip-label">Writing mode</span>
+      <p>짧은 note와 긴 article을 같은 아카이브에서 운영</p>
     </div>
   </section>
 
@@ -54,8 +61,7 @@ const tags = getTags(posts).slice(0, 10);
       <p class="section-kicker">Recent</p>
       <h2>최근 기록</h2>
       <p>
-        공부 중 바로 붙잡아 둔 메모와, 한 번 더 정리한 글을 시간순으로 모아
-        봅니다.
+        최근에 적은 노트와 정리글을 시간순으로 정리했습니다.
       </p>
     </div>
 
@@ -68,7 +74,7 @@ const tags = getTags(posts).slice(0, 10);
     <div class="section-heading">
       <p class="section-kicker">Series</p>
       <h2>연속적으로 보는 주제</h2>
-      <p>기초 개념과 진단 주제를 시리즈 단위로 이어서 읽을 수 있습니다.</p>
+      <p>같은 주제를 단계적으로 다시 읽기 좋게 묶었습니다.</p>
     </div>
 
     <div class="series-list">
@@ -99,9 +105,8 @@ const tags = getTags(posts).slice(0, 10);
       <h2>왜 이렇게 기록하나요?</h2>
     </div>
     <p>
-      수식과 직관이 연결되는 지점을 놓치지 않기 위해, 읽은 내용을 짧게 저장하고
-      나중에 더 긴 문장으로 다시 정리합니다. 이 블로그는 그 반복의 흔적을 모아둔
-      작업대입니다.
+      읽은 내용을 바로 저장해 두고, 나중에 설명 가능한 문장으로 다시 정리하기
+      위해서입니다. 이 블로그는 그 반복을 오래 남겨두기 위한 작업대입니다.
     </p>
     <a class="text-link" href="/about">더 보기</a>
   </section>
